@@ -33,4 +33,6 @@ if [ -n "$ACCOUNT" ]; then
     docker exec -it mvpn mullvad connect
     echo "Waiting for Connection Status..." && sleep 20
     docker exec -it mvpn mullvad status
+    export http_proxy="socks5h://127.0.0.1:1080"
+    export https_proxy="socks5h://127.0.0.1:1080"
 fi
